@@ -32,7 +32,7 @@
 }
 body,
 html {
-  @apply bg-customDarkBg2;
+  @apply bg-slate-50 text-slate-800;
 }
 
 /* Borders */
@@ -47,13 +47,13 @@ html {
 /* Buttons */
 
 .custom-button-colored {
-  @apply rounded-lg font-bold bg-customPrimary text-white flex justify-center items-center hover:bg-[#7274f3] cursor-pointer transition;
+  @apply rounded-lg font-bold bg-customPrimary text-white inline-block  hover:bg-indigo-500 transition cursor-pointer;
 }
 
 /* Navbar */
 
 .navbar-link {
-  @apply text-white lg:text-base text-2xl  leading-6 mr-4 ml-4   2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition duration-300 h-full pt-2;
+  @apply lg:text-base text-2xl leading-6 mr-4 ml-4 2xl:mr-6 2xl:ml-6 font-normal lg:font-medium h-full pt-2 hover:text-customPrimary transition-colors;
 }
 
 /* Preventing FOUC */
