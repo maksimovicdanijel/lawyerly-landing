@@ -29,8 +29,8 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className="text-[22px] mt-7 w-[600px] text-center m-auto leading-9 text-indigo-950 font-light drop-shadow-sm">
-            Ovde ide neki tekst koji opisuje cemu sluzi aplikacija, i koje
-            probleme resava
+            Kompletno rešenje za tvoju advokatsku kancelariju dostupno uvek i na
+            svim uređajima
           </div>
         </motion.div>
 
