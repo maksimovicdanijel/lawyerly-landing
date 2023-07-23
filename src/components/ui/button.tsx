@@ -1,12 +1,16 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
 export function Button({
   children,
+  className,
   ...props
-}: React.PropsWithChildren<typeof HTMLAnchorElement>) {
+}: React.PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>) {
   return (
-    <a {...props} className="custom-button-colored px-10 py-3 box-sh shadow">
+    <button
+      {...props}
+      className={`${className} custom-button-colored px-10 py-3 box-sh shadow disabled:cursor-default disabled:bg-indigo-300 disabled:hover:bg-indigo-300`}
+    >
       {children}
-    </a>
+    </button>
   );
 }

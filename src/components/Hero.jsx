@@ -6,6 +6,8 @@ import dashboard from "../assets/images/dashboard.jpg";
 import { Button } from "./ui/button";
 
 export const Hero = () => {
+  const [invitationVisible, setInvitationVisible] = useState(false);
+
   return (
     <section
       className="bg-gradient-to-b from-90% from-indigo-100 to-slate-50 w-screen h-screen flex justify-center items-center pb-24 sm:pb-32 md:pb-44 lg:pb-0"
@@ -41,9 +43,14 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <Button>Isprobal besplatno</Button>
+          <Button onClick={() => setInvitationVisible(!invitationVisible)}>
+            Isprobal besplatno
+          </Button>
         </motion.div>
       </div>
+      {invitationVisible ? (
+        <InvitationModal onClose={() => setInvitationVisible(false)} />
+      ) : null}
     </section>
   );
 };
