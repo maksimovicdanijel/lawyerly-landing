@@ -121,10 +121,10 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
 
                 <form
                   className="w-full"
-                  netlify
                   name="sign-up"
                   onSubmit={handleSubmit(onSubmit)}
                 >
+                  <input type="hidden" name="form-name" value="sign-up" />
                   <input
                     type="email"
                     placeholder="Tvoja email adresa"
