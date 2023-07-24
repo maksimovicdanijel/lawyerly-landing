@@ -20,8 +20,11 @@ const signUpSchema = yup.object({
 type SignUpSchema = yup.InferType<typeof signUpSchema>;
 
 export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
-  const { register, handleSubmit } = useForm<SignUpSchema>({
+  const { register, handleSubmit, reset } = useForm<SignUpSchema>({
     resolver: yupResolver(signUpSchema),
+    defaultValues: {
+      email: "",
+    },
   });
 
   const [state, setState] = useState({
@@ -49,6 +52,8 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
         error: "",
         saved: true,
       });
+
+      reset();
     } catch (err) {
       setState({
         error:
@@ -116,7 +121,7 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
 
                 <form
                   className="w-full"
-                  data-netlify="true"
+                  netlify
                   name="sign-up"
                   onSubmit={handleSubmit(onSubmit)}
                 >
