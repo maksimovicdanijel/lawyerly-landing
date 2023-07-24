@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckArrowIcon } from "../assets/icons/CheckArrowIcon";
 import { CloseIcon } from "../assets/icons/CloseIcon";
 import { Button } from "./ui/button";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -24,11 +24,18 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
     resolver: yupResolver(signUpSchema),
   });
 
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState("");
+  const [state, setState] = useState({
+    saving: false,
+    error: "",
+    saved: false,
+  });
 
   const onSubmit: SubmitHandler<SignUpSchema> = async (data) => {
-    setSaving(true);
+    setState({
+      saved: false,
+      error: "",
+      saving: true,
+    });
 
     try {
       await fetch("/", {
@@ -36,15 +43,20 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ email: data.email }).toString(),
       });
-    } catch (err) {
-      setError(
-        "Imamo malih problema sa vašom prijavom. Molimo pokušajte malo kasnije"
-      );
-    } finally {
-      setSaving(false);
-    }
 
-    setSaving(false);
+      setState({
+        saving: false,
+        error: "",
+        saved: true,
+      });
+    } catch (err) {
+      setState({
+        error:
+          "Imamo malih problema sa vašom prijavom. Molimo pokušajte malo kasnije.",
+        saving: false,
+        saved: false,
+      });
+    }
   };
 
   return (
@@ -60,11 +72,11 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
           onClick={onClose}
         >
           <div
-            className="w-full h-screen sm:h-auto sm:w-3/4 md:w-3/5 lg:w-[1000px] xl:w-[1100px] sm:rounded-2xl bg-slate-50 py-12 px-8 sm:px-16 backdrop-blur-xl sm:mb-8 fixed mx-auto z-50"
+            className="h-auto w-[90%] sm:w-3/4 md:w-3/5 lg:w-[600px] rounded-xl bg-slate-50 py-12 px-8 sm:px-16 backdrop-blur-xl sm:mb-8 fixed mx-auto z-50"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex relative justify-center items-center">
-              <div className="w-1/2 hidden lg:inline">
+            <div className="relative justify-center items-center">
+              <div className="w-full">
                 <h2 className="mt-6 mb-4 text-4xl font-bold tracking-normal text-indigo-500">
                   Hvala na interesovanju!
                 </h2>
@@ -88,12 +100,20 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
                   </li>
                 </ul>
               </div>
-              <div className="w-full lg:w-1/2 flex items-center flex-col pl-12">
-                {error ? (
-                  <div className="bg-red-50 rounded px-4 py-2 border-red-600 border">
-                    {error}
+              <div className="w-full pt-6 lg:pt-0">
+                {state.error ? (
+                  <div className="bg-red-50 rounded px-4 py-2  text-red-800 mb-4">
+                    {state.error}
                   </div>
                 ) : null}
+
+                {state.saved ? (
+                  <div className="bg-green-100 rounded px-4 py-2  text-green-800 mb-4">
+                    Uspešno ste prijavljeni na email listu. Hvala na
+                    interesovanju!
+                  </div>
+                ) : null}
+
                 <form
                   className="w-full"
                   data-netlify="true"
@@ -109,9 +129,9 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
                   <Button
                     type="submit"
                     className="w-full mt-4 block"
-                    disabled={saving}
+                    disabled={state.saving}
                   >
-                    {!saving ? "Prijavi se" : "Prijavljujem te..."}
+                    {!state.saving ? "Prijavi se" : "Prijavljujem te..."}
                   </Button>
                 </form>
               </div>
