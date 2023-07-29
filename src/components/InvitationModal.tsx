@@ -41,13 +41,11 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
     });
 
     try {
-      await fetch("/", {
+      await fetch("https://submit-form.com/AaHMpc78", {
         method: "post",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
+        body: JSON.stringify({
           email: data.email,
-          "form-name": "sign-up",
-        }).toString(),
+        }),
       });
 
       setState({
@@ -126,10 +124,7 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
                   className="w-full"
                   name="sign-up"
                   onSubmit={handleSubmit(onSubmit)}
-                  netlify
-                  netlify-honeypot
                 >
-                  <input type="hidden" name="form-name" value="sign-up" />
                   <input
                     type="email"
                     placeholder="Tvoja email adresa"
