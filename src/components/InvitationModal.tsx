@@ -126,6 +126,8 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
                   className="w-full"
                   name="sign-up"
                   onSubmit={handleSubmit(onSubmit)}
+                  netlify
+                  netlify-honeypot
                 >
                   <input type="hidden" name="form-name" value="sign-up" />
                   <input
