@@ -7,6 +7,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useFormspark } from "@formspark/use-formspark";
 
 type Props = {
   onClose?: () => void;
@@ -27,6 +28,8 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
     },
   });
 
+  const [submit] = useFormspark({ formId: "AaHMpc78" });
+
   const [state, setState] = useState({
     saving: false,
     error: "",
@@ -41,11 +44,8 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
     });
 
     try {
-      await fetch("https://submit-form.com/AaHMpc78", {
-        method: "post",
-        body: JSON.stringify({
-          email: data.email,
-        }),
+      await submit({
+        email: data.email,
       });
 
       setState({

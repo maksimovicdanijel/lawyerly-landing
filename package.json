@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/tailwind": "^3.1.1",
     "@fontsource/inter": "^4.5.15",
+    "@formspark/use-formspark": "^0.1.39",
     "@hookform/resolvers": "^3.1.1",
     "@uidotdev/usehooks": "^2.0.1",
     "astro": "^2.2.0",
