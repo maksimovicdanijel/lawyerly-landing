@@ -10,7 +10,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="bg-gradient-to-b from-90% from-indigo-100 to-slate-50 w-screen h-screen flex justify-center items-center pb-24 sm:pb-32 md:pb-44 lg:pb-0"
+      className="bg-gradient-to-b from-70% from-indigo-100 to-slate-50 w-screen h-screen flex justify-center items-center pb-24 sm:pb-32 md:pb-44 lg:pb-0"
       id="home"
     >
       <div className="2xl:w-[1280px] xl:w-10/12 w-9/12 flex flex-col pt-40 sm:pt-16 lg:pt-20">
@@ -44,7 +44,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.15 }}
         >
           <Button onClick={() => setInvitationVisible(!invitationVisible)}>
-            Isprobal besplatno
+            Isprobaj besplatno
           </Button>
         </motion.div>
       </div>
