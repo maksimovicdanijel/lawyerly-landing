@@ -11,7 +11,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="bg-gradient-to-b from-70% from-blue-100 to-slate-50 w-screen h-screen flex justify-center items-center pb-24 sm:pb-32 md:pb-44 lg:pb-0"
+      className="bg-gradient-to-b from-60% from-slate-200 to-slate-50 w-screen h-screen flex justify-center items-center pb-24 sm:pb-32 md:pb-44 lg:pb-0"
       id="home"
     >
       <div className="2xl:w-[1280px] xl:w-10/12 w-9/12 flex flex-col pt-40 sm:pt-16 lg:pt-20">

@@ -24,7 +24,7 @@ export const Navbar = () => {
   return (
     <nav
       className={`w-full h-20 flex flex-col justify-center items-center fixed z-40 transition-colors ${
-        state.y > 10 ? "bg-slate-100" : ""
+        state.y > 100 ? "bg-white shadow-sm" : ""
       }`}
     >
       <div className="2xl:w-[1280px] w-11/12 flex justify-between items-center relative">
