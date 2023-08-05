@@ -22,7 +22,7 @@ export const FeatureCard: React.FC<PropsWithChildren<Props>> = ({
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className={`w-10/12 lg:w-[1200px] mx-auto md:flex md:justify-between md:items-center bg-white rounded-2xl shadow-sm p-10`}
+      className={`2xl:w-[1280px] w-11/12 mx-auto md:flex md:justify-between md:items-center bg-white rounded-2xl shadow-sm p-10`}
     >
       <div className="md:w-5/12 mb-8 md:mb-0">
         {subtitle ? (

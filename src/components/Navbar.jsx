@@ -27,7 +27,7 @@ export const Navbar = () => {
         state.y > 10 ? "bg-slate-100" : ""
       }`}
     >
-      <div className="2xl:w-[1280px] xl:w-10/12 w-9/12 flex justify-between items-center relative">
+      <div className="2xl:w-[1280px] w-11/12 flex justify-between items-center relative">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
