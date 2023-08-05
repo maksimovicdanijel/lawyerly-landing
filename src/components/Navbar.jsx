@@ -19,8 +19,6 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [state] = useWindowScroll();
 
-  console.log(state.y);
-
   return (
     <nav
       className={`w-full h-20 flex flex-col justify-center items-center fixed z-40 transition-colors ${
