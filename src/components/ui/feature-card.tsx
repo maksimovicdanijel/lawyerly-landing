@@ -26,13 +26,13 @@ export const FeatureCard: React.FC<PropsWithChildren<Props>> = ({
     >
       <div className="md:w-5/12 mb-8 md:mb-0">
         {subtitle ? (
-          <h4 className="font-bold uppercase tracking-wider text-sm mb-5 text-indigo-950 flex items-center">
+          <h4 className="font-bold uppercase tracking-wider text-sm mb-5 text-blue-950 flex items-center font-[Lexend]">
             {icon ? icon : null}
             <span className="ml-2">{subtitle}</span>
           </h4>
         ) : null}
 
-        <h2 className="text-4xl md:text-[44px] font-bold mb-6 leading-[52px] text-indigo-950">
+        <h2 className="text-4xl md:text-[44px] font-bold mb-6 leading-[52px] text-blue-950 font-[Lexend]">
           {title}
         </h2>
         <p className="leading-8 text-lg">{description}</p>

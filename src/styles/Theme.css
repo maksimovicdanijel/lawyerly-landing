@@ -54,7 +54,7 @@ html {
 /* Buttons */
 
 .custom-button-colored {
-  @apply rounded-lg font-bold bg-customPrimary text-white inline-block hover:bg-indigo-500  transition cursor-pointer;
+  @apply rounded-lg font-bold bg-customPrimary text-white inline-block hover:bg-blue-600  transition cursor-pointer;
 }
 
 /* Navbar */

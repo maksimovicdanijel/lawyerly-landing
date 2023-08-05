@@ -8,6 +8,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useFormspark } from "@formspark/use-formspark";
+import { Highlighted } from "./ui/highlighted";
 
 type Props = {
   onClose?: () => void;
@@ -83,8 +84,8 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
           >
             <div className="relative justify-center items-center">
               <div className="w-full">
-                <h2 className="mt-6 mb-4 text-4xl font-bold tracking-normal text-indigo-500">
-                  Hvala na interesovanju!
+                <h2 className="mt-6 mb-4 text-4xl font-bold tracking-normal">
+                  <Highlighted>Hvala na interesovanju!</Highlighted>
                 </h2>
                 <p>
                   Aktivno radimo na razvoju aplikacije i ako želiš da budeš u
@@ -128,7 +129,7 @@ export const InvitationModal: React.FC<Props> = ({ onClose, onSubscribe }) => {
                   <input
                     type="email"
                     placeholder="Tvoja email adresa"
-                    className="p-3 w-full rounded-lg bg-slate-50 border-slate-200 border-2  focus:border-indigo-500 outline-none focus:shadow-sm"
+                    className="p-3 w-full rounded-lg bg-slate-50 border-slate-200 border-2  focus:border-blue-500 outline-none focus:shadow-sm"
                     {...register("email")}
                   />
                   <Button

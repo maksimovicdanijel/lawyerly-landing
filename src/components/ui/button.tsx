@@ -8,7 +8,7 @@ export function Button({
   return (
     <button
       {...props}
-      className={`${className} custom-button-colored px-10 py-3 box-sh shadow disabled:cursor-default disabled:bg-indigo-300 disabled:hover:bg-indigo-300`}
+      className={`${className} custom-button-colored px-10 py-3 box-sh shadow disabled:cursor-default disabled:bg-blue-300 disabled:hover:bg-blue-300`}
     >
       {children}
     </button>

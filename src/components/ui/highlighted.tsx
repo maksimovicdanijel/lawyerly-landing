@@ -10,7 +10,7 @@ export const Highlighted: FC<PropsWithChildren<Props>> = ({
 }) => {
   return (
     <span
-      className={`${className} text-customPrimary drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-indigo-800`}
+      className={`${className} text-customPrimary drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-br from-blue-800 to-blue-500`}
     >
       {children}
     </span>

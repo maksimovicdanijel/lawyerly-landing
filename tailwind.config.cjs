@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customPrimary: "#4f46e5",
-        customSecondary: "rgb(161, 163, 247)",
+        customPrimary: "#1d4ed8",
+        customSecondary: "#3b82f6",
         customDarkBg1: "rgb(31, 32, 35)",
         customDarkBg2: "rgb(38, 39, 43)",
         customDarkBg3: "rgb(48, 49, 54)",
@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         Inter: "Inter",
+        Lexend: "Lexend",
       },
       screens: {
         xs: "530px",
