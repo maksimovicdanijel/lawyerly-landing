@@ -15,16 +15,16 @@ export const Hero = () => {
       id="home"
     >
       <div className="2xl:w-[1280px] w-11/12 flex items-center justify-between">
-        <div className="flex flex-col w-8/12">
+        <div className="flex flex-col lg:w-8/12 w-full text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
           >
-            <div className="text-4xl sm:text-6xl font-bold drop-shadow-sm tracking-tight text-blue-950 font-[Lexend]">
-              <span className="md:inline">Advokatska kancelarija</span>
+            <div className="text-4xl sm:text-6xl font-bold drop-shadow-sm tracking-tight leading-10 text-blue-950 font-[Lexend]">
+              <span>Advokatska kancelarija</span>
             </div>
-            <div className="sm:mt-2 text-4xl sm:text-6xl font-bold tracking-tight">
+            <div className="mt-1 text-4xl sm:text-6xl font-bold tracking-tight">
               <Highlighted>u tvom džepu</Highlighted>
             </div>
           </motion.div>
@@ -33,10 +33,10 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="sm:text-xl mt-7 sm:w-[600px] sm:leading-9 text-indigo-950 drop-shadow-sm">
+            <p className="sm:text-xl mt-7 w-10/12 sm:w-[600px] mx-auto lg:mx-0 sm:leading-9 text-indigo-950 drop-shadow-sm">
               Kompletno rešenje za tvoju advokatsku kancelariju dostupno uvek i
               na svim uređajima
-            </div>
+            </p>
           </motion.div>
 
           <motion.div
@@ -50,12 +50,17 @@ export const Hero = () => {
             </Button>
           </motion.div>
         </div>
-        <div className="w-5/12 ml-8">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="w-5/12 ml-8 hidden lg:block"
+        >
           <img
-            src="https://tuple.app/img/farhan.jpg"
+            src="https://placehold.co/400x500?text=Advokat ovde"
             className="rounded-xl shadow"
           />
-        </div>
+        </motion.div>
       </div>
 
       {invitationVisible ? (
