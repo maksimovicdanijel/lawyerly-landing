@@ -20,7 +20,7 @@ export const Pricing: React.FC = () => {
         <div className="flex justify-between gap-8 items-center">
           <div className="flex-1">
             <PricingTable
-              price={17}
+              price="17€"
               title="Osnovni"
               description="Paket za tvoje najosnovnije potrebe."
               action={<Button className="w-full">Izaberi</Button>}
@@ -36,7 +36,7 @@ export const Pricing: React.FC = () => {
           <div className="flex-1">
             <PricingTable
               highlighted
-              price={29}
+              price="29€"
               title="Srednji"
               description="Za tvoj uvećani obim posla i bolje finansije."
               action={
@@ -58,7 +58,12 @@ export const Pricing: React.FC = () => {
 
           <div className="flex-1">
             <PricingTable
-              price={50}
+              price={
+                <span>
+                  50€
+                  <span className="text-slate-700 text-sm">/po korisniku</span>
+                </span>
+              }
               title="Timski"
               description="Za advokatske timove."
               action={<Button className="w-full">Izaberi</Button>}

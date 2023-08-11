@@ -1,5 +1,5 @@
 type Props = {
-  price: number;
+  price: string | React.ReactNode;
   title: string;
   description?: string;
   action: React.ReactNode;
@@ -17,8 +17,8 @@ export const PricingTable: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`p-7 bg-white rounded-xl shadow ${
-        highlighted ? "bg-customPrimary " : ""
+      className={`p-7 rounded-xl shadow ${
+        highlighted ? "bg-customPrimary " : "bg-white"
       }`}
     >
       <p
@@ -26,7 +26,7 @@ export const PricingTable: React.FC<Props> = ({
           highlighted ? "text-white" : "text-blue-950"
         }`}
       >
-        {price}€
+        {price}
       </p>
       <h6
         className={`font-[Lexend] text-[18px] mb-3 ${
