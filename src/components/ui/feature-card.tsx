@@ -33,12 +33,14 @@ export const FeatureCard: React.FC<PropsWithChildren<Props>> = ({
             </h4>
           ) : null}
 
-          <h2 className="text-4xl md:text-[44px] font-bold mb-6 leading-[52px] text-blue-950 font-[Lexend]">
+          <h2 className="text-2xl md:text-4xl font-bold mb-6 md:leading-[52px] text-blue-950 font-[Lexend]">
             {title}
           </h2>
-          <p className="leading-8 text-lg">{description}</p>
+          <p className="md:leading-8 md:text-lg">{description}</p>
         </div>
-        <div className="rounded-xl overflow-hidden md:w-6/12">{image}</div>
+        <div className="rounded-xl overflow-hidden md:w-6/12 hidden md:block">
+          {image}
+        </div>
       </Container>
     </motion.div>
   );

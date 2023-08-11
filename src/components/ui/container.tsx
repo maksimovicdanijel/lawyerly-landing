@@ -4,7 +4,7 @@ type Props = {
 
 export const Container: React.FC<React.PropsWithChildren<Props>> = ({
   children,
-  className,
+  className = "",
 }) => {
   return (
     <div className={`${className} 2xl:w-[1280px] w-11/12 mx-auto`}>

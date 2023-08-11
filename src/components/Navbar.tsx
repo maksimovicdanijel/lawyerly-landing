@@ -7,7 +7,8 @@ import { Container } from "./ui/container";
 
 const navbarLinks = [
   { label: "Početna", href: "#home", ariaLabel: "Početna" },
-  { label: "Paketi", href: "#paketi", ariaLabel: "Features" },
+  { label: "Funkcionalnosti", href: "#features", ariaLabel: "Funkcionalnosti" },
+  { label: "Paketi", href: "#pricing", ariaLabel: "Paketi" },
   {
     label: "Najčešća pitanja",
     href: "#najcesca-pitanja",
