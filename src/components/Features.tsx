@@ -4,7 +4,7 @@ import dashboardExample from "../assets/images/dashboard-example.png";
 
 export const Features = () => {
   return (
-    <section className="w-full mt-20 " id="features">
+    <section className="w-full mt-20 mb-24" id="features">
       <div className="mb-14">
         <FeatureCard
           subtitle="Klijenti"
@@ -119,7 +119,7 @@ export const Features = () => {
           image={<img src={dashboardExample} alt="f1" />}
         />
       </div>
-      <div className="mb-14">
+      <div>
         <FeatureCard
           icon={
             <svg

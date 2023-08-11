@@ -17,23 +17,33 @@ export const PricingTable: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`p-7 border-slate-800 border rounded-xl text-white shadow-xl ${
+      className={`p-7 bg-white rounded-xl shadow ${
         highlighted ? "bg-customPrimary " : ""
       }`}
     >
-      <p className="text-5xl font-[Lexend] mb-6">{price}€</p>
-      <h6 className="font-[Lexend] text-[18px] mb-3">{title}</h6>
-      <p className={`${highlighted ? "text-white" : "text-slate-400"} mb-8`}>
+      <p
+        className={`text-5xl font-[Lexend] mb-6 ${
+          highlighted ? "text-white" : "text-blue-950"
+        }`}
+      >
+        {price}€
+      </p>
+      <h6
+        className={`font-[Lexend] text-[18px] mb-3 ${
+          highlighted ? "text-white" : "text-blue-950"
+        }`}
+      >
+        {title}
+      </h6>
+      <p className={`${highlighted ? "text-white" : "text-slate-700"} mb-8`}>
         {description}
       </p>
 
-      <div className="mb-12">{action}</div>
-
-      <ul>
+      <ul className="mb-12">
         {features.map((feature) => (
           <li
             className={`mb-4 flex ${
-              highlighted ? "text-white" : "text-slate-400"
+              highlighted ? "text-white" : "text-slate-700"
             } `}
           >
             <svg
@@ -55,6 +65,8 @@ export const PricingTable: React.FC<Props> = ({
           </li>
         ))}
       </ul>
+
+      <div>{action}</div>
     </div>
   );
 };

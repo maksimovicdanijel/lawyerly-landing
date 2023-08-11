@@ -6,13 +6,13 @@ import { Button } from "./ui/button";
 
 export const Pricing: React.FC = () => {
   return (
-    <motion.div className="bg-slate-900 w-full">
-      <Container className="py-20">
+    <motion.div className="w-full mt-16">
+      <Container>
         <div className="text-center mb-16">
-          <h3 className="text-white sm:text-center text-[40px] font-[Lexend] mb-3">
+          <h3 className="text-blue-950 sm:text-center text-[40px] font-[Lexend] mb-3">
             Pronađi paket za sebe.
           </h3>
-          <p className="text-slate-400 text-[18px]">
+          <p className="text-slate-600 text-[18px]">
             Izaberi paket koji najviše odgovara tvojim potrebama.
           </p>
         </div>
@@ -40,7 +40,7 @@ export const Pricing: React.FC = () => {
               title="Srednji"
               description="Za tvoj uvećani obim posla i bolje finansije."
               action={
-                <button className="w-full bg-blue-50 rounded-lg p-3 text-blue-950 box-sh shadow font-[500]">
+                <button className="w-full bg-white rounded-lg p-3 text-blue-950 box-sh shadow font-[500]">
                   Izaberi
                 </button>
               }
