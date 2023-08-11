@@ -33,7 +33,7 @@ export const FeatureCard: React.FC<PropsWithChildren<Props>> = ({
             </h4>
           ) : null}
 
-          <h2 className="text-2xl md:text-4xl font-bold mb-6 md:leading-[52px] text-blue-950 font-[Lexend]">
+          <h2 className="text-2xl md:text-4xl font-bold mb-6 md:leading-[44px] text-blue-950 font-[Lexend]">
             {title}
           </h2>
           <p className="md:leading-8 md:text-lg">{description}</p>
