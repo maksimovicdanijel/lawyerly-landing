@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 
-import { TailcastLogo } from "../assets/logos/TailcastLogo";
 import { Logo } from "./Logo";
 import { useWindowScroll } from "@uidotdev/usehooks";
+import { Container } from "./ui/container";
 
 const navbarLinks = [
   { label: "Početna", href: "#home", ariaLabel: "Početna" },
@@ -25,7 +25,7 @@ export const Navbar = () => {
         state.y > 100 ? "bg-white shadow-sm" : ""
       }`}
     >
-      <div className="2xl:w-[1280px] w-11/12 flex justify-between items-center relative">
+      <Container className="flex justify-between items-center relative">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -67,7 +67,7 @@ export const Navbar = () => {
           <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
           <div className="w-5 h-0.5 bg-gray-500 "></div>
         </div>
-      </div>
+      </Container>
       {/* Mobile navbar */}
       <AnimatePresence>
         {isOpen && (
