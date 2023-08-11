@@ -34,11 +34,7 @@ export const Navbar = () => {
           exit={{ opacity: 0 }}
         >
           <a className="navbar-link" href="#home" aria-label="Home">
-            <div className="flex justify-start items-center grow basis-0">
-              <div className="mr-2 text-6xl">
-                <Logo />
-              </div>
-            </div>
+            <Logo />
           </a>
         </motion.div>
         <motion.div
@@ -61,12 +57,40 @@ export const Navbar = () => {
           </div>
         </motion.div>
         <div
-          className="lg:hidden flex flex-col  px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer"
+          className="lg:hidden px-2 py-3 cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
-          <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
-          <div className="w-5 h-0.5 bg-gray-500 "></div>
+          {isOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          )}
         </div>
       </Container>
       {/* Mobile navbar */}
@@ -75,18 +99,17 @@ export const Navbar = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.15 }}
             exit={{ opacity: 0 }}
           >
             <div
               className="flex flex-col mt-16 lg:hidden absolute top-4 left-0  bg-white z-50 w-full 
-        items-center gap-10 pb-10 border-y shadow pt-10
+        items-center gap-4 pb-10 border-y shadow pt-10
         "
             >
               {navbarLinks.map(({ label, href, ariaLabel }) => (
                 <a
                   key={href}
-                  className="navbar-link"
                   href={href}
                   onClick={() => setIsOpen(false)}
                   aria-label={ariaLabel}

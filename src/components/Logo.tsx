@@ -2,7 +2,7 @@ type Props = {
   className?: string;
 };
 
-export const Logo: React.FC<Props> = ({ className }) => (
+export const Logo: React.FC<Props> = ({ className = "" }) => (
   <span className={`inline-flex ${className}`}>
     <span className="font-[Lexend] text-2xl text-blue-950">
       <span className="inline-block mr-[10px] relative text-white">
